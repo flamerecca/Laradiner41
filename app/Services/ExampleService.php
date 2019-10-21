@@ -47,7 +47,7 @@ class ExampleService
         $file = Storage::get('file.txt');
         $fileArray = explode("\n", $file);
         $pattern = '/^'. $request['key'] . ':/';
-        preg_grep($pattern, $fileArray);
-        return (string)$request['key'];
+        $resultArray = preg_grep($pattern, $fileArray);
+        return $resultArray;
     }
 }
